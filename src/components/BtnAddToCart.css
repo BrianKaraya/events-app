@@ -1,0 +1,20 @@
+.btn-add {
+  padding: 6px 15px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  color: lime;
+  background-color: black;
+  margin-top: 1rem;
+  margin-left: 85%;
+}
+.btn-add:hover {
+  padding: 6px 18px;
+  transition: all 0.3s ease-out;
+
+  color: chartreuse;
+  border-radius: 5px;
+  border: 2px solid black;
+  cursor: pointer;
+}

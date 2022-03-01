@@ -1,0 +1,11 @@
+.posted {
+  max-width: 1000px;
+  width: 75%;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+  margin: 0 auto;
+  font-size: 15px;
+  padding: 1rem;
+  border-radius: 5px;
+}

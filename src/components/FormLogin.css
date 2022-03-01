@@ -1,0 +1,124 @@
+.login-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  max-width: 1200px;
+  width: 90%;
+  background-color: rgb(50, 78, 78);
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  padding-bottom: 2rem;
+}
+.login-container h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 1px;
+  padding-top: 10px;
+  margin-bottom: 1rem;
+}
+
+.form-input-group {
+  margin-bottom: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-btn {
+  margin: 0 auto;
+}
+.login-form {
+  background: linear-gradient(to right, rgb(22, 209, 209), rgb(18, 109, 109));
+  width: 70%;
+  /* display: flex; */
+  padding-bottom: 20px;
+  border-radius: 7px 7px 0 0;
+  /* transition: 1s; */
+  margin-top: -10px;
+}
+
+.form-text {
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+.form-btn {
+  width: 40%;
+  margin-top: 30px;
+  margin-left: 30.5%;
+  padding-bottom: 4px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  background-color: rgb(30, 73, 60);
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  color: yellow;
+  margin-bottom: 15px;
+  height: 38px;
+  font: 700 1rem 'Quicksand', sans-serif;
+  text-align: center;
+}
+.form-btn:hover {
+  background: rgb(4, 172, 102);
+}
+.form-btn:active {
+  transform: scale(0.98);
+}
+
+.form-link {
+  color: rgb(23, 100, 40);
+  text-decoration: none;
+  cursor: pointer;
+}
+.form-link:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+.error {
+  margin-left: 30%;
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    padding-top: 0px;
+
+    padding-top: 10px;
+    width: 100%;
+  }
+  .login-form {
+    width: 90%;
+    margin-top: 80px;
+
+    border-radius: 7px;
+  }
+  .login-form h1 {
+    font-size: 1.1rem;
+
+    padding-top: 10px;
+    padding-bottom: 7px;
+  }
+  .form-input-group .form-input {
+    width: 60%;
+    padding: 0.75rem;
+
+    border-radius: 5px;
+    border: 2px solid #dddddd;
+
+    height: 30px;
+  }
+  .form-btn {
+    width: 55%;
+    margin-top: 15px;
+    margin-left: 22.5%;
+    padding-bottom: 4px;
+
+    font-size: 1.1rem;
+
+    margin-bottom: 12px;
+    height: 30px;
+  }
+}

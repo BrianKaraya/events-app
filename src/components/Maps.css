@@ -1,0 +1,9 @@
+.ifo h4 {
+  color: darkkhaki;
+}
+.map-div {
+}
+@media screen and (max-width: 500px) {
+  .map-div {
+  }
+}
