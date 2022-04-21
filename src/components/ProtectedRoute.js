@@ -1,43 +1,33 @@
-/* import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React from 'react';
+import { Route, Routes, useLocation, Navigate, Outlet } from 'react-router-dom';
 
-const ProtectedRoute = ({ auth, component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={(props) => {
-        if (auth) return <Component {...props} />;
-        if (!auth) {
-          return {
-            <Redirect
-              to={{ pathname: '/login', state: { from: props.location } }}
-            /> 
-          };
-        }
-        return <Component {...props} />;
-      }}
-    />
+//import { AuthProvider } from './components/auth';
+//import { useAuth } from './auth';
+import useAuth from '../hooks/useAuth';
+
+const ProtectedRoute = ({ children }) => {
+  const location = useLocation();
+  const { auth } = useAuth();
+  return auth?.username ? (
+    children
+  ) : (
+    <Navigate to="/login" state={{ from: location }} replace />
   );
 };
 
 export default ProtectedRoute;
 
+/* const ProtectedRoute = ({ children }) => {
+  const { auth } = useAuth();
 
+  const location = useLocation();
 
-
- */
-
-import React from 'react';
-import { useAuth } from './auth';
-import { useHistory } from 'react-router-dom';
-
-const ProtectedRoute = ({ children }) => {
-  const auth = useAuth();
-  const history = useHistory();
-
-  if (!auth.user) {
-    history.push('/login');
+  if (!auth) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
-  return children;
+  return children; 
+ 
 };
-export default ProtectedRoute;
+
+export default ProtectedRoute; 
+ */

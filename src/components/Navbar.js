@@ -1,21 +1,20 @@
-import React, { useState, Component } from 'react';
-import { Button } from './Button';
+import React, { useState, Component, useContext } from 'react';
+
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import { useAuth } from './auth';
-//import { Dropdown } from './Dropdown'
-//import useAuth from './useAuth';
+//import { useAuth } from './auth';
+import useAuth from '../hooks/useAuth';
 
-//import { useContext } from 'react';
+//import { AuthProvider } from './components/auth';
 
-function Navbar({ cartItems }) {
-  // const { cartItems, showHideCart } = useContext(CartContext);
+const Navbar = ({ cartItems }) => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
   const closeMobileMenu = () => setClick(false);
-  //const [isAuth, login, logout] = useAuth(false);
-  const auth = useAuth();
+
+  // const  = useAuth();
+
   return (
     <>
       <header>
@@ -24,12 +23,6 @@ function Navbar({ cartItems }) {
             EVENTS
           </Link>
           <div className="header-outer">
-            {/*  <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-          </div> */}
-            {/*  <Link to="/" className="brand" onClick={closeMobileMenu}>
-              EVENTS
-            </Link> */}
             <div className="menu-icon" onClick={handleClick}>
               <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
             </div>
@@ -56,19 +49,17 @@ function Navbar({ cartItems }) {
                     className="nav-links"
                     onClick={closeMobileMenu}
                   >
-                    Fans
+                    Coupons
                   </Link>
                 </li>
                 <li className="nav-item">
-                  {!auth.user && (
-                    <Link
-                      to="/login"
-                      className="nav-links"
-                      onClick={closeMobileMenu}
-                    >
-                      Login
-                    </Link>
-                  )}
+                  <Link
+                    to="/login"
+                    className="nav-links"
+                    onClick={closeMobileMenu}
+                  >
+                    Login
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -85,6 +76,6 @@ function Navbar({ cartItems }) {
       </header>
     </>
   );
-}
+};
 
 export default Navbar;

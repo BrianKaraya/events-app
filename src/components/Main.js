@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react';
-import data from '../data';
+import React from 'react';
+//import data from '../data';
 import Product from './Product';
 
 export default function Main(props) {

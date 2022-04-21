@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
 
-import data from '../data';
 import { Maps } from './Maps';
-import CheckoutCart from './CheckoutCart';
 
 export class Cards extends Component {
   render() {

@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
-import ProtectedRoute from '../ProtectedRoute';
-// import useAuth from '../useAuth';
-import PostLists from '../PostLists';
-import CouponDeals from './CouponDeals';
-import FormLogin from '../FormLogin';
-import { Navigate, useLocation, withRouter } from 'react-router-dom';
+import React, { useContext } from 'react';
 
-function Profile(props) {
+import PostLists from '../PostLists';
+import useAuth from '../../hooks/useAuth';
+
+const Profile = () => {
+  const { auth } = useAuth();
   return (
     <div className="posts">
-      <PostLists />
+      <h1>Welcome {auth.username}!</h1>
+      <h3>Your profile</h3>
+
+      <h2>Info</h2>
+      <hr />
+      <h2>Role: {auth.roles}</h2>
+      <h2>Email: {auth.email}</h2>
+      <p>
+        <a href="/">Go back home</a>
+      </p>
     </div>
   );
-}
+};
 export default Profile;

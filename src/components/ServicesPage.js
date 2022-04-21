@@ -1,6 +1,5 @@
 import React from 'react';
-import Footer from './Footer';
-import { Maps } from './Maps';
+
 import './ServicesPage.css';
 import ServicesPageItems from './ServicesPageItems';
 

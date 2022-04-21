@@ -85,7 +85,3 @@ export class Maps extends Component {
 Maps = GoogleApiWrapper({
   apiKey: '',
 })(Maps);
-
-// If you're adding a number of markers, you may want to drop them on the map
-// consecutively rather than all at once. This example shows how to use
-// window.setTimeout() to space your markers' animation.

@@ -1,21 +1,23 @@
-import { useContext, useState } from 'react';
-import { createContext } from 'react';
-//import { AuthProvider } from '../context/userAuthContext';
+import { createContext, useContext, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [username, setUserName] = useState(null);
 
-  const llogin = (user) => {
-    setUser(user);
+  const login = () => {
+    setUserName(username);
+    //   navigate('/');
   };
-  const llogout = (user) => {
-    setUser(null);
+
+  const logout = () => {
+    setUserName(null);
+    <Navigate to="/login" />;
   };
 
   return (
-    <AuthContext.Provider value={{ user, llogin, llogout }}>
+    <AuthContext.Provider value={{ username, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

@@ -33,6 +33,24 @@
   height: auto;
   margin-bottom: 30px;
 }
+.btn_add {
+  height: 2.2rem;
+  margin-bottom: 5px;
+  width: 8rem;
+  font-size: 16px;
+  padding: 1.5px 10px;
+  color: lime;
+  background-color: black;
+}
+.btn_add:hover {
+  cursor: pointer;
+}
+.btn-div {
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+  margin-top: 0;
+}
 
 .products {
   margin: 20px auto;
@@ -46,7 +64,7 @@
 }
 .card {
   width: 500px;
-  height: 450px;
+  height: 470px;
   border: 1px solid black;
   border-radius: 5px;
   overflow: hidden;

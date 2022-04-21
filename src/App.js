@@ -2,26 +2,17 @@ import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Services from './components/pages/Services';
-import CouponDeals from './components/pages/CouponDeals';
-import Login from './components/pages/Login';
-import Signup from './components/pages/Signup';
-import Home from './components/pages/Home';
-// import Checkout from './components/pages/Checkout';
-import Basket from './components/pages/Basket';
 
-import Profile from './components/pages/Profile';
-import Logout from './components/pages/Logout';
-import ProtectedRoute from './components/ProtectedRoute';
-
-import Product from './components/Product';
 import data from './data';
-import Main from './components/Main';
-import Footer from './components/Footer';
-import Routes from './components/Routes';
+
+import Routers from './components/Routes';
 import Slider from './components/Slider';
 import { SliderData } from './components/SliderData';
-import { AuthProvider } from './components/auth';
+import { AuthProvider } from './context/AuthProvider';
+//import { AuthProvider } from './components/auth';
+import useAuth from './hooks/useAuth';
+import Footer from './components/Footer';
+import { Maps } from './components/Maps';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -64,9 +55,6 @@ function App() {
     setCartItems([]);
   };
 
-  const loggingIn = async () => {};
-  const loggingOut = async () => {};
-
   return (
     <>
       <AuthProvider>
@@ -74,7 +62,7 @@ function App() {
           <Navbar cartItems={cartItems} />
           <Slider slides={SliderData} />
 
-          <Routes
+          <Routers
             eventProducts={eventProducts}
             cartItems={cartItems}
             handleAddEvent={handleAddEvent}

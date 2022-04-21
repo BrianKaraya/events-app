@@ -21,22 +21,6 @@ export default function Home(props) {
       <div className="section">
         <Slider slides={SliderData} />
       </div>
-
-      {/*  <main>
-        <h2>Upcoming events..</h2>
-        <div>
-          {eventProducts.map((item) => (
-            <Product key={item.id} item={item} />
-          ))}
-        </div>
-      </main> */}
-
-      {/* <Cards /> */}
-      {/* <Product /> */}
-
-      {/* <Main eventProducts={eventProducts} /> */}
-
-      {/* <Footer /> */}
     </>
   );
 }

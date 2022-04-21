@@ -1,63 +1,174 @@
-import React, { Component } from 'react';
-//import useAuth from './useAuth';
+import React from 'react';
+
 import './FormLogin.css';
-import { Link } from 'react-router-dom';
-import PostLists from './PostLists';
-import CouponDeals from './pages/CouponDeals';
-import { useState } from 'react';
-import { useAuth } from './auth';
-import { useHistory } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+import { useRef, useState, useEffect, useContext } from 'react';
+
+import axios from 'axios';
+
+//import { useAuth } from './auth';
+import useAuth from '../hooks/useAuth';
+
+const LOGIN_URL =
+  'https://frontend-educational-backend.herokuapp.com/api/auth/signin';
 
 const FormLogin = () => {
-  //const [isAuth, login, logout] = useAuth(false);
-  const [user, setUser] = useState('');
-  const auth = useAuth();
-  const history = useHistory();
+  //const setAuth = useAuth();
+  //const auth = useAuth(useContext);
 
-  const handleLogin = () => {
-    auth.llogin(user);
-    history.push('/');
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
+
+  const userRef = useRef();
+  const errRef = useRef();
+
+  const [username, setUserName] = useState('');
+
+  const [auth, setAuth] = useState('');
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    userRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    setErrMsg('');
+  }, [username, password]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        LOGIN_URL,
+        JSON.stringify({ username, password }),
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          //withCredentials: true,
+        }
+      );
+      console.log(JSON.stringify(response?.data));
+      console.log(JSON.stringify(response));
+      const accessToken = response?.data?.accessToken;
+      const roles = response?.data?.roles;
+      setAuth({ username, email, password, roles, accessToken });
+
+      //auth({ username, password, roles, accessToken });
+
+      setUserName('');
+      setEmail('');
+      setPassword('');
+      setSuccess(true);
+
+      // navigate(from, { replace: true });
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg('No Server Response');
+      } else if (err.response?.status === 400) {
+        setErrMsg('Missing Username or Password');
+      } else if (err.response?.status === 401) {
+        setErrMsg('Unauthorized');
+      } else {
+        setErrMsg('Login Failed');
+      }
+      errRef.current.focus();
+    }
   };
 
   return (
-    <div className="login-container">
-      <h1>Login</h1>
-      <div className="login-form">
-        <div className="form-input-group">
-          <div className="username">
+    <>
+      {success ? (
+        <section className="login-container">
+          <h1>Welcome {auth.username}!</h1>
+          <h2>Info</h2>
+          <h2>Role: {auth.roles}</h2>
+          <h2>Email: {auth.email}</h2>
+
+          <br />
+          <div className="li">
+            <a href="/">Home</a>
             <br />
-            <input
-              type="text"
-              placeholder="username"
-              onChange={(e) => setUser(e.target.value)}
-              className="form-input"
-            />
+
+            <a href="/profile">Profile</a>
+            {/* <button>Logout</button> */}
           </div>
-          <div className="password">
-            <br />
-            <input
-              type="password"
-              placeholder="password"
-              onChange={(e) => setUser(e.target.value)}
-              className="form-input"
-            />
-          </div>
-          <div>
-            <button className="form-btn" onClick={handleLogin}>
-              Login
-            </button>
-          </div>
-          <div>
-            <div className="form-text">
-              <p className="form-link">
-                Not a member? <Link to={'/signup'}>Register</Link>
+        </section>
+      ) : (
+        <section>
+          <div className="login-container">
+            <h1>Sign In</h1>
+
+            <form onSubmit={handleSubmit} className="login-form">
+              <p
+                ref={errRef}
+                className={errMsg ? 'errmsg' : 'offscreen'}
+                aria-live="assertive"
+              >
+                {errMsg}
               </p>
-            </div>
+              <label htmlFor="username">Username:</label>
+              <input
+                type="text"
+                id="username"
+                ref={userRef}
+                autoComplete="off"
+                onChange={(e) => setUserName(e.target.value)}
+                value={username}
+                required
+              />
+
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                required
+              />
+              <button>Sign In</button>
+              <p>
+                Need an Account?{' '}
+                <span className="">
+                  <a href="/signup" className="form-link">
+                    Sign Up
+                  </a>
+                </span>
+              </p>
+            </form>
           </div>
-        </div>
-      </div>
-    </div>
+        </section>
+      )}
+    </>
   );
 };
 
 export default FormLogin;
+
+{
+  /* <>
+      {success ? (
+        <section className="login-container">
+          <h1>
+            Welcome
+             {setAuth.username}! 
+          </h1>
+
+          <br />
+          <div className="li">
+            <a href="/">Home</a>
+
+            <a href="/profile">Profile</a>
+             <button>Logout</button> 
+          </div>
+        </section>
+      ) : ( */
+}

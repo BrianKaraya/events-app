@@ -1,40 +1,28 @@
-import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import { useAuth } from '../auth';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
 import PostLists from '../PostLists';
-import { useHistory } from 'react-router-dom';
 
-//import useAuth from '../useAuth';
+//import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../auth';
+import { AuthProvider } from '../auth';
 
-function CouponDeals(props) {
-  //const [isAuth, login, logout] = useAuth(false);
+const CouponDeals = () => {
   const auth = useAuth();
-  const history = useHistory();
-  const handlellogout = () => {
-    auth.llogout();
-    history.push('/');
-  };
-
-  const style = {
-    color: 'red',
-    fontSize: 15,
-    marginLeft: 200,
-    marginBottom: 20,
-    marginTop: 20,
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    navigate('/');
   };
 
   return (
-    <div className="">
-      <div style={style}>
-        <h2>Welcome {auth.user}</h2>
-        <button className="" onClick={handlellogout}>
-          Logout
-        </button>
+    <div className="coupons">
+      <div>
+        <h2>Welcome</h2>
       </div>
 
       <PostLists />
     </div>
   );
-}
+};
 
 export default CouponDeals;

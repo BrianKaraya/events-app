@@ -1,5 +1,4 @@
-/* //import PostLists from '../PostLists';
-import useAuth from '../useAuth';
+import useAuth from '../../hooks/useAuth';
 import React, { useState } from 'react';
 
 export default function Logout() {
@@ -22,8 +21,3 @@ export default function Logout() {
     </div>
   );
 }
- */
-import React from 'react';
-//import { FormSignup } from '../FormSignup';
-
-export default function Logout() {}

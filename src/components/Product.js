@@ -1,19 +1,13 @@
-import { useContext } from 'react';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import BtnAddToCart from './BtnAddToCart';
-import data from '../data';
+import React from 'react';
+
 import './Product.css';
-import Main from './Main';
+
 import formatCurrency from 'format-currency';
-//import CartContext from '../context/cart/CartContext';
-import { useCallback } from 'react';
+
 import { Maps } from './Maps';
 import Footer from './Footer';
 
 export default function Product({ eventProducts, handleAddEvent }) {
-  //const { addToCart } = useContext(CartContext);
-  //const { item } = props;
   let opts = { format: '%s%v', symbol: '€' };
 
   return (
@@ -52,10 +46,9 @@ export default function Product({ eventProducts, handleAddEvent }) {
             </div>
           ))}
         </div>
-        <div className="mapss">
-          {/* <h2>Event Locations</h2> */}
+        {/* <div className="mapss">
           <Maps />
-        </div>
+        </div> */}
 
         <div className="footer-div">
           <Footer />
