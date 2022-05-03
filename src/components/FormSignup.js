@@ -14,7 +14,7 @@ import { useCallback } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { useAuth } from './auth';
 import { Button } from './Button';
-import BtnAddToCart from './BtnAddToCart';
+import AccessButton from './AccessButton';
 
 const USERNAME_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PASSWORD_REGEX =
@@ -282,7 +282,7 @@ const FormSignup = () => {
             >
               Sign Up
             </button> */}
-            <BtnAddToCart name="Sign up" />
+            <AccessButton name="Sign up" />
 
             <p>
               Already registered?{' '}

@@ -6,7 +6,7 @@ import formatCurrency from 'format-currency';
 
 import { Maps } from './Maps';
 import Footer from './Footer';
-import BtnAddToCart from './BtnAddToCart';
+import BtnAddToCart from './AccessButton';
 
 export default function Product({ eventProducts, handleAddEvent }) {
   let opts = { format: '%s%v', symbol: '€' };

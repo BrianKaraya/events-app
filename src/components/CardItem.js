@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import BtnAddToCart from './BtnAddToCart';
+import BtnAddToCart from './AccessButton';
 
 function CardItem(props) {
   return (

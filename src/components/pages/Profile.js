@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 
 import PostLists from '../PostLists';
 import useAuth from '../../hooks/useAuth';
-import BtnAddToCart from '../BtnAddToCart';
+import BtnAddToCart from '../AccessButton';
 
 const Profile = () => {
   const { auth } = useAuth();

@@ -9,7 +9,7 @@ import axios from 'axios';
 
 //import { useAuth } from './auth';
 import useAuth from '../hooks/useAuth';
-import BtnAddToCart from './BtnAddToCart';
+import AccessButton from './AccessButton';
 
 const LOGIN_URL =
   'https://frontend-educational-backend.herokuapp.com/api/auth/signin';
@@ -136,7 +136,7 @@ const FormLogin = () => {
                 required
               />
               {/* <button>Sign In</button> */}
-              <BtnAddToCart name="Sign in" />
+              <AccessButton name="Sign in" />
               <p>
                 Need an Account?{' '}
                 <span className="">

@@ -2,11 +2,11 @@ import useAuth from '../../hooks/useAuth';
 import React, { useState } from 'react';
 import Button from '../Button';
 
-import BtnAddToCart from '../BtnAddToCart';
+import AccessButton from '../AccessButton';
 
 export default function Logout() {
   //const [isAuth, login, logout] = useAuth(true);
-  return <BtnAddToCart name="Reserve" />;
+  return <AccessButton name="Reserve" />;
 }
 {
   /* {isAuth ? (
