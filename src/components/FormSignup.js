@@ -13,6 +13,8 @@ import { useCallback } from 'react';
 
 import { Link, withRouter } from 'react-router-dom';
 import { useAuth } from './auth';
+import { Button } from './Button';
+import BtnAddToCart from './BtnAddToCart';
 
 const USERNAME_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PASSWORD_REGEX =
@@ -132,6 +134,7 @@ const FormSignup = () => {
             {errMsg}
           </p>
           <h1>Register</h1>
+
           <form onSubmit={handleSubmit} className="form">
             <label htmlFor="username">
               Username:
@@ -270,7 +273,7 @@ const FormSignup = () => {
               Must match the first password input field.
             </p>
 
-            <button
+            {/*  <button
               disabled={
                 !validName || !validEmail || !validPwd || !validMatch
                   ? true
@@ -278,7 +281,9 @@ const FormSignup = () => {
               }
             >
               Sign Up
-            </button>
+            </button> */}
+            <BtnAddToCart name="Sign up" />
+
             <p>
               Already registered?{' '}
               <span className="line">

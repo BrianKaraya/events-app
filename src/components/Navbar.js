@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 //import { useAuth } from './auth';
 import useAuth from '../hooks/useAuth';
+import { Button } from './Button';
 
 //import { AuthProvider } from './components/auth';
 

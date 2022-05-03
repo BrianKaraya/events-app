@@ -1,11 +1,15 @@
 import useAuth from '../../hooks/useAuth';
 import React, { useState } from 'react';
+import Button from '../Button';
+
+import BtnAddToCart from '../BtnAddToCart';
 
 export default function Logout() {
-  const [isAuth, login, logout] = useAuth(true);
-  return (
-    <div>
-      {isAuth ? (
+  //const [isAuth, login, logout] = useAuth(true);
+  return <BtnAddToCart name="Reserve" />;
+}
+{
+  /* {isAuth ? (
         <>
           <div className="ui message violet">You are logged out.</div>
         </>
@@ -17,7 +21,5 @@ export default function Logout() {
             Logout
           </button>
         </>
-      )}
-    </div>
-  );
+      )} */
 }

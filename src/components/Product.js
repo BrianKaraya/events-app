@@ -6,6 +6,7 @@ import formatCurrency from 'format-currency';
 
 import { Maps } from './Maps';
 import Footer from './Footer';
+import BtnAddToCart from './BtnAddToCart';
 
 export default function Product({ eventProducts, handleAddEvent }) {
   let opts = { format: '%s%v', symbol: '€' };
@@ -41,7 +42,6 @@ export default function Product({ eventProducts, handleAddEvent }) {
                 >
                   Add to Cart
                 </button>
-                {/* onClick={() => addToCart(item)} */}
               </div>
             </div>
           ))}

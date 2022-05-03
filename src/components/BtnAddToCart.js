@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useLocation, Navigate } from 'react-router-dom';
+import './BtnAddToCart.css';
 const data = {
   products: [
     {
@@ -66,9 +68,13 @@ const data = {
 //export default eventData;
 
 const BtnAddToCart = (props) => {
+  /* const location = useLocation();
+  const handleSignOut = () => {
+    <Navigate to="/logout" state={{ from: location }} replace />;
+  }; */
   return (
     <div>
-      <button className="btn-add">Reserve</button>
+      <button className="btn-add">{props.name}</button>
     </div>
   );
 };

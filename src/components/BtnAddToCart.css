@@ -1,13 +1,16 @@
 .btn-add {
-  padding: 6px 15px;
+  padding: 0.5rem 3rem;
   border-radius: 5px;
   outline: none;
   border: none;
-  font-size: 14px;
+  font-size: 1.1rem;
   color: lime;
   background-color: black;
-  margin-top: 1rem;
-  margin-left: 85%;
+  margin-top: 2rem;
+  /* height: 2rem; */
+  margin-left: 15%;
+  width: 70%;
+  /* margin: 2rem 10rem; */
 }
 .btn-add:hover {
   padding: 6px 18px;
