@@ -21,6 +21,7 @@ import Profile from './pages/Profile';
 //import { AuthProvider } from './auth';
 import { AuthProvider } from '../context/AuthProvider';
 import { useAuth } from '../hooks/useAuth';
+import { Maps } from './Maps';
 
 const Routers = ({
   eventProducts,

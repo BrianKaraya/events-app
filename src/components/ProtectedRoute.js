@@ -7,6 +7,7 @@ import useAuth from '../hooks/useAuth';
 
 const ProtectedRoute = ({ children }) => {
   const location = useLocation();
+  //error reading and declaring auth
   const { auth } = useAuth();
   return auth?.username ? (
     children

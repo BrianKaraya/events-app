@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import App from '../App';
+import './Maps.css';
 
 export class Maps extends Component {
   state = {
@@ -26,7 +27,7 @@ export class Maps extends Component {
   render() {
     return (
       <div className="map-div">
-        {' '}
+        <h2>Event Locations</h2>
         <Map
           google={this.props.google}
           zoom={7}

@@ -2,6 +2,10 @@
   color: darkkhaki;
 }
 .map-div {
+  max-width: 1200px;
+  width: 95%;
+  height: 350px;
+  margin-bottom: 2rem;
 }
 @media screen and (max-width: 500px) {
   .map-div {

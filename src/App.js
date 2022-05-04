@@ -69,6 +69,7 @@ function App() {
             handleRemoveEvent={handleRemoveEvent}
             handleCartClearance={handleCartClearance}
           />
+          <Footer />
         </Router>
       </AuthProvider>
     </>

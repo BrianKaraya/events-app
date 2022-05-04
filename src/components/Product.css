@@ -4,10 +4,21 @@
   box-sizing: border-box;
   height: auto;
 }
+.main-container {
+  position: relative;
+}
+.map-div {
+  max-width: 1200px;
+  width: 100%;
+  height: 350px;
+  position: relative;
+  margin: 0 auto;
+}
 .container {
   align-items: center;
   justify-content: center;
   height: auto;
+  margin-bottom: -30px;
 }
 .title {
   padding-top: 0;
@@ -51,10 +62,12 @@
   padding-bottom: 2px;
   margin-top: 0;
 }
+.p-cards {
+}
 
 .products {
-  margin: 20px auto;
-  width: 100%;
+  margin: 10px auto;
+  width: 95%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -64,12 +77,12 @@
 }
 .card {
   width: 500px;
-  height: 470px;
+  height: 430px;
   border: 1px solid black;
   border-radius: 5px;
   overflow: hidden;
-  padding: 10px;
-  margin: 40px 20px;
+  padding: 5px;
+  margin: 30px 10px;
   background-color: rgb(57, 83, 83);
 }
 .product-image {

@@ -16,7 +16,6 @@ const LOGIN_URL =
 
 const FormLogin = () => {
   //const setAuth = useAuth();
-  //const auth = useAuth(useContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -62,8 +61,6 @@ const FormLogin = () => {
       const accessToken = response?.data?.accessToken;
       const roles = response?.data?.roles;
       setAuth({ username, email, password, roles, accessToken });
-
-      //auth({ username, password, roles, accessToken });
 
       setUserName('');
       setEmail('');
@@ -174,3 +171,5 @@ export default FormLogin;
         </section>
       ) : ( */
 }
+//const auth = useAuth(useContext);
+/*   auth({ username, password, roles, accessToken }) */

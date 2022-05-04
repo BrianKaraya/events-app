@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 
 import PostLists from '../PostLists';
 import useAuth from '../../hooks/useAuth';
-import BtnAddToCart from '../AccessButton';
+import AccessButton from '../AccessButton';
 
 const Profile = () => {
   const { auth } = useAuth();
@@ -23,7 +23,7 @@ const Profile = () => {
       <p>
         <a href="/">Go back home</a>
       </p>
-      <BtnAddToCart name="Sign out" />
+      <AccessButton name="Sign out" />
     </div>
   );
 };

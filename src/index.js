@@ -5,6 +5,7 @@ import App from './App';
 
 //import { AuthProvider } from '../src/components/auth';
 import { AuthProvider } from './context/AuthProvider';
+import { useAuth } from './hooks/useAuth';
 
 ReactDOM.render(
   <React.StrictMode>
